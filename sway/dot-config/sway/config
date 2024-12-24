@@ -1,11 +1,7 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -19,35 +15,35 @@ set $term kitty
 set $menu wmenu-run
 
 ### Output configuration
-#
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/.local/share/backgrounds/main.jpg fill
-#
+
 # Example configuration:
-#
+
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
+
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-#
+
 # Example configuration:
-#
+
   exec swayidle -w \
           timeout 300 'swaylock -f' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'swaylock -f'
  
   bindsym alt+l exec swaylock -f
-#
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
+
 # Example configuration:
-#
+
   input "type:touchpad" {
       dwt enabled
       tap enabled
@@ -64,9 +60,9 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
   }
 
 ### Key bindings
-#
+
 # Basics:
-#
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -97,9 +93,9 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
+
 # Moving around:
-#
+
 	bindsym alt+tab workspace next_on_output 
     # Move your focus around
     bindsym $mod+$left focus left
@@ -122,9 +118,9 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
+
 # Workspaces:
-#
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -149,9 +145,9 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-#
+
 # Layout stuff:
-#
+
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -174,9 +170,9 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-#
+
 # Scratchpad:
-#
+
     # Sway has a "scratchpad", which is a bag of holding for windows.
     # You can send windows there and get them back later.
 
@@ -186,9 +182,9 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-#
+
 # Resizing containers:
-#
+
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -211,9 +207,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-#
+
 # Utilities:
-#
+
     # Special keys to adjust volume via PulseAudio
     #bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
@@ -228,9 +224,9 @@ bindsym $mod+r mode "resize"
 	bindsym $mod+g exec gammastep-indicator &
 
 	exec mako
-#
+
 # Status Bar:
-#
+
 # Read `man 5 sway-bar` for more information about this section.
 bar {
 	position bottom	
