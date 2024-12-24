@@ -21,7 +21,7 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.local/share/backgrounds/2023-09-17-14-32-03-w.jpg fill
+output * bg ~/.local/share/backgrounds/main.jpg fill
 #
 # Example configuration:
 #
