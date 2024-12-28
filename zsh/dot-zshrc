@@ -26,7 +26,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -104,8 +104,6 @@ alias icat="kitten icat"
 
 alias mvd="mv ~/Downloads/*(.)"
 
-alias ta="tmux attach"
-
 alias ani-history="cat /home/nietxan/.local/state/ani-cli/ani-hsts"
 
 alias copy="wl-copy"
@@ -122,17 +120,10 @@ export PODMAN_COMPOSE_WARNING_LOGS=false
 export PATH=$HOME/.local/bin:$PATH
 
 # go
-export PATH="/usr/lib/golang/bin:$PATH" 
+export PATH=/usr/lib/golang/bin:$PATH 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
-
-
-# bun completions
-[ -s "/home/nietxan/.bun/_bun" ] && source "/home/nietxan/.bun/_bun"
-
-# zoxide
-eval "$(zoxide init zsh)"
 
 # JAVA_HOME
 export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
