@@ -1,3 +1,5 @@
 ### usage
 
+```bash
 stow --dotfiles */
+```
