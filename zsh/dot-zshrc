@@ -133,7 +133,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 eval "$(zoxide init zsh)"
 
 # JAVA_HOME
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-21.0.5.0.11-1.fc41.x86_64"
+export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
