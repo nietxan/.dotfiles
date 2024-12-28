@@ -216,8 +216,8 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
     #bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 1%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 1%+
     # Special key to take a screenshot with grim
 	bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 	# Gamma
