@@ -116,6 +116,9 @@ alias dot="nvim ~/.dotfiles"
 
 export PODMAN_COMPOSE_WARNING_LOGS=false
 
+# k8s
+source <(kubectl completion zsh)
+
 # python
 export PATH=$HOME/.local/bin:$PATH
 
