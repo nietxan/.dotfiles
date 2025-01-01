@@ -117,21 +117,16 @@ alias dot="nvim ~/.dotfiles"
 export PODMAN_COMPOSE_WARNING_LOGS=false
 
 # k8s
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 # python
 export PATH=$HOME/.local/bin:$PATH
 
 # go
-export PATH=/usr/lib/golang/bin:$PATH 
+export PATH=$PATH:/usr/lib/golang/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # JAVA_HOME
 export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-. "/home/nietxan/.deno/env"
