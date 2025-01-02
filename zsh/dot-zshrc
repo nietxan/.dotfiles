@@ -124,8 +124,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 # go
 export PATH=$PATH:/usr/lib/golang/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # JAVA_HOME
