@@ -20,6 +20,13 @@ return require('packer').startup(function(use)
 	use 'mbbill/undotree'
 
 	use {
+		'ej-shafran/compile-mode.nvim', tag = 'v5.*',
+		requires = {
+			'nvim-lua/plenary.nvim',
+		}
+	}
+
+	use {
 		'windwp/nvim-autopairs',
 		config = function() require('nvim-autopairs').setup {} end
 	}
