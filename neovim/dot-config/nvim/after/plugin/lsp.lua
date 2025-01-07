@@ -27,6 +27,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
+	ensure_installed = {
+		"clangd",
+		"gitlab_ci_ls",
+		"gopls",
+		"pylsp",
+		"zls"
+	},
+
 	handlers = {
 		function(server_name)
 			require('lspconfig')[server_name].setup({})
