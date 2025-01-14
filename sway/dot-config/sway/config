@@ -220,6 +220,7 @@ output * bg ~/.local/share/backgrounds/main.jpg fill
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 1%+
     # Special key to take a screenshot with grim
 	bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+	bindsym $mod+Shift+p exec grim -g "$(slurp -d)" "$HOME/Pictures/Screenshots/Sreenshot From $(date +"%Y-%m-%d %H-%M-%S").png"
 	# Gamma
 	bindsym $mod+g exec gammastep &
 
