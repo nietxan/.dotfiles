@@ -114,6 +114,8 @@ alias e="exit"
 
 alias dot="nvim ~/.dotfiles"
 
+alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d')"
+
 export PODMAN_COMPOSE_WARNING_LOGS=false
 
 # k8s
