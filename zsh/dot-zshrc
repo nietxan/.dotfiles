@@ -116,6 +116,8 @@ alias dot="nvim ~/.dotfiles"
 
 alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d')"
 
+alias k="kubectl"
+
 export PODMAN_COMPOSE_WARNING_LOGS=false
 
 # python
