@@ -114,7 +114,7 @@ alias e="exit"
 
 alias dot="nvim ~/.dotfiles"
 
-alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d')"
+alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d').md"
 
 alias k="kubectl"
 
