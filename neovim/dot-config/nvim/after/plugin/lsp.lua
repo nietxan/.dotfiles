@@ -31,7 +31,7 @@ require('mason-lspconfig').setup({
 		"clangd",
 		"gopls",
 		"pylsp",
-		"zls"
+		"ts_ls"
 	},
 
 	handlers = {

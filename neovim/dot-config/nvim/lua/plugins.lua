@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
 
 	use 'mbbill/undotree'
 
+	use 'stevearc/oil.nvim'
+
 	use {
 		'ej-shafran/compile-mode.nvim', tag = 'v5.*',
 		requires = {
@@ -31,8 +33,8 @@ return require('packer').startup(function(use)
 	}
 
 	use {
-		"susensio/magic-bang.nvim",
-		config = function() require("magic-bang").setup() end
+		'susensio/magic-bang.nvim',
+		config = function() require('magic-bang').setup() end
 	}
 
 	use {
