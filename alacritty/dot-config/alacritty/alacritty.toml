@@ -1,0 +1,40 @@
+[font]
+normal = { family = "Source Code Pro", style = "Medium"}
+size = 12.0
+
+[colors.primary]
+foreground = "#dddddd"
+background = "#000000"
+
+[colors.cursor]
+text = "#111111"
+cursor = "#cccccc"
+
+[colors.normal]
+black = "#000000"
+red = "#cc0403"
+green = "#19cb00"
+yellow = "#cecb00"
+blue = "#0d73cc"
+magenta = "#cb1ed1"
+cyan = "#0dcdcd"
+white = "#dddddd"
+
+[colors.bright]
+black = "#767676"
+red = "#f2201f"
+green = "#23fd00"
+yellow = "#fffd00"
+blue = "#1a8fff"
+magenta = "#fd28ff"
+cyan = "#14ffff"
+white = "#ffffff"
+
+[cursor]
+thickness = 0.1
+
+[terminal]
+shell = "zsh"
+
+[window]
+decorations = "None"
