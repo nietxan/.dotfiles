@@ -100,7 +100,7 @@ alias vim="nvim"
 
 alias cls="clear"
 
-alias icat="kitten icat"
+# alias icat="kitten icat"
 
 alias mvd="mv ~/Downloads/*(.)"
 
