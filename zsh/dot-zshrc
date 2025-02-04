@@ -120,6 +120,9 @@ alias k="kubectl"
 
 export PODMAN_COMPOSE_WARNING_LOGS=false
 
+# yarn
+export PATH=$PATH:$HOME/.yarn/bin
+
 # python
 export PATH=$HOME/.local/bin:$PATH
 
