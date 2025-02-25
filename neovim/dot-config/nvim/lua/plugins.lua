@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
 
 	use 'stevearc/oil.nvim'
 
+	use 'tpope/vim-abolish'
+
 	use {
 		'ej-shafran/compile-mode.nvim', tag = 'v5.*',
 		requires = {
