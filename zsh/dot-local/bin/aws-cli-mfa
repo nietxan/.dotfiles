@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+if [ -z $1 ]; then
+	echo "ERROR: No cloud name provided"
+	exit 1
+fi
+
+if [ $1 = "remofirst" ]; then
+	serial="arn:aws:iam::501286816618:mfa/remofirst-qcloudy-niyetkhan"
+elif [ $1 = "baiterek" ]; then
+	serial="arn:aws:iam::891377176437:mfa/baiterek-qcloudy-niyetkhan"	
+else
+	echo "ERROR: Privided cloud name doesn't match"
+	exit 1
+fi
+
+if [ -z $2 ]; then
+	echo "ERROR: No token code were provided"
+	exit 1
+fi
+
+aws sts get-session-token --output json --serial-number $serial --token-code $2 > /tmp/aws-cli-cred.json
+
+export AWS_ACCESS_KEY_ID=$(cat /tmp/aws-cli-cred.json | jq -r '.Credentials.AccessKeyId')
+export AWS_SECRET_ACCESS_KEY=$(cat /tmp/aws-cli-cred.json | jq -r '.Credentials.SecretAccessKey')
+export AWS_SESSION_TOKEN=$(cat /tmp/aws-cli-cred.json | jq -r '.Credentials.SessionToken')
+
+rm /tmp/aws-cli-cred.json
