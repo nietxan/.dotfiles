@@ -17,3 +17,5 @@ require("oil").setup({
 	},
 	skip_confirm_for_simple_edits = false,
 })
+
+vim.keymap.set('n', '<leader>o', require('oil').open, {})
