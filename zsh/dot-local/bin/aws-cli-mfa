@@ -10,7 +10,7 @@ if [ $1 = "remofirst" ]; then
 elif [ $1 = "baiterek" ]; then
 	serial="arn:aws:iam::891377176437:mfa/baiterek-qcloudy-niyetkhan"	
 else
-	echo "ERROR: Privided cloud name doesn't match"
+	echo "ERROR: Provided cloud name doesn't match"
 	exit 1
 fi
 
