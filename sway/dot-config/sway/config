@@ -73,7 +73,7 @@
     bindsym $mod+d exec $menu
 
 	# Start nnmtui
-	bindsym $mod+n exec kitty sh ~/.config/sway/nmtui.sh
+	bindsym $mod+n exec alacritty -e ~/.config/sway/nmtui.sh
 
 	bindsym $mod+Shift+b exec blueman-manager
 
