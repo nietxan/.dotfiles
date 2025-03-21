@@ -122,6 +122,8 @@ alias k="kubectl"
 
 alias tk="tmux run-shell 'tmux switch-client -n' \; kill-session"
 
+alias hl="rg --passthrough"
+
 export PODMAN_COMPOSE_WARNING_LOGS=false
 
 # yarn
