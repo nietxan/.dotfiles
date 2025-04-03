@@ -96,7 +96,7 @@
 
 # Moving around:
 
-	bindsym alt+tab workspace next_on_output 
+	bindsym alt+tab workspace back_and_forth 
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
