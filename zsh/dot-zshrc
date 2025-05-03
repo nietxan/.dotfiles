@@ -118,11 +118,35 @@ alias dot="nvim ~/.dotfiles"
 
 alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d').md"
 
-alias k="kubectl"
-
 alias tk="tmux run-shell 'tmux switch-client -n' \; kill-session"
 
 alias hl="rg --passthrough"
+
+# kubectl
+
+k() {
+	case $1 in
+		d)
+			shift
+			command kubectl describe $@
+			;;
+		pf)
+			shift
+			command kubectl port-forward $@
+			;;
+		e)
+			shift
+			command kubectl events $@
+			;;
+		l)
+			shift
+			command kubectl logs $@
+			;;
+		*)
+			command kubectl $@
+			;;
+	esac
+}
 
 export PODMAN_COMPOSE_WARNING_LOGS=false
 

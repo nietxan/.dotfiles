@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
 
 	use 'tpope/vim-abolish'
 
+	use 'towolf/vim-helm'
+
 	use {
 		'windwp/nvim-autopairs',
 		config = function() require('nvim-autopairs').setup {} end
