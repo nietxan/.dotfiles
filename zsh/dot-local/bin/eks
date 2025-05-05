@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+AWS_PROFILE=remofirst
+rm ~/.kube/config
+
+case $1 in
+	infra)
+		aws eks update-kubeconfig --region us-east-1 --name remofirst-infra-eks
+		;;
+	dev)
+		aws eks update-kubeconfig --region us-east-1 --name remoteam-dev-eks
+		;;
+	stage)
+		aws eks update-kubeconfig --region us-east-1 --name remoteam-stage-eks
+		;;
+	prod)
+		aws eks update-kubeconfig --region us-east-1 --name remoteam-prod-eks
+		;;
+	*)
+		echo "unknown"
+		;;
