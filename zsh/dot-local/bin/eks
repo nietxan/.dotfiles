@@ -13,6 +13,8 @@ if [ -z "$1" ]; then
 	usage
 fi
 
+echo > $HOME/.kube/config
+
 export AWS_PROFILE
 
 case $1 in
