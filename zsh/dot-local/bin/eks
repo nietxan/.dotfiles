@@ -30,6 +30,9 @@ case $1 in
 	prod)
 		aws eks update-kubeconfig --region "$AWS_REGION" --name remoteam-prod-eks
 		;;
+	clear)
+		echo > $HOME/.kube/config
+		;;
 	*)
 		echo "Error: Unknown environment '$1'." >&2
 		usage
@@ -37,7 +40,11 @@ case $1 in
 esac
 
 if [ $? -eq 0 ]; then
-	echo "Successfully updated kubeconfig for '$1' environment."
+	if [[ $1 == 'clear' ]]; then
+		echo "Successfully cleaned kubeconfig"
+	else
+		echo "Successfully updated kubeconfig for '$1' environment."
+	fi
 else
 	echo "Error updating kubeconfig for '$1' environment." >&2
 	exit 1
