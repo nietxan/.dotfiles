@@ -1,16 +1,39 @@
 #!/usr/bin/env bash
 
+basename() {
+	local path="$1"
+	local parts="$2"
+
+	path="${path%/}"
+
+	IFS='/' read -r -a path_array <<< "$path"
+	local total=${#path_array[@]}
+
+	local start=$((total - parts))
+	if (( start < 0 )); then
+		start=0
+	fi
+
+	local result=""
+	for ((i = start; i < total; i++)); do
+		result+="/${path_array[i]}"
+	done
+
+	echo "$result/"
+}
+
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Code ~/Code/sec ~/Projects ~ -mindepth 1 -maxdepth 3 -type d | fzf)
+    selected=$(find ~/Projects -mindepth 1 -maxdepth 3 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
     exit 0
 fi
 
-selected_name=$(basename "$selected" | tr . _)
+selected_name=$(basename "$selected" 3)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
