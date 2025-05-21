@@ -23,12 +23,15 @@ case $1 in
 		;;
 	dev)
 		aws eks update-kubeconfig --region "$AWS_REGION" --name remoteam-dev-eks
+		kubectl config set-context --current --namespace remoteam-dev
 		;;
 	stage)
 		aws eks update-kubeconfig --region "$AWS_REGION" --name remoteam-stage-eks
+		kubectl config set-context --current --namespace remoteam-stage
 		;;
 	prod)
 		aws eks update-kubeconfig --region "$AWS_REGION" --name remoteam-prod-eks
+		kubectl config set-context --current --namespace remoteam-prod
 		;;
 	clear)
 		echo > $HOME/.kube/config
