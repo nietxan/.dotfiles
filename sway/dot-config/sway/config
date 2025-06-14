@@ -223,11 +223,6 @@
     # Special key to take a screenshot with grim
 	bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 	bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | tee -a "$HOME/Pictures/Screenshots/Sreenshot From $(date +"%Y-%m-%d %H-%M-%S").png" | wl-copy -t image/png
-	bindsym $mod+q exec clipman pick -t wofi
-	bindsym alt+Shift+c exec clipman clear --all
-
-	# Clipboard Manager
-	bindsym alt+c exec wl-paste -t text --watch clipman store
 
 	# Gamma
 	exec gammastep &
