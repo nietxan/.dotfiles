@@ -1,8 +1,8 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Source .zprofile if it exists and this is a login shell
+# This ensures that your environment variables are set even if .zshrc is sourced directly by a login shell.
+if [[ -f ~/.zprofile ]]; then
+  . ~/.zprofile
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,21 +71,11 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-autosuggestions
+    git
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -96,83 +86,59 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=/usr/bin/nvim
-
 alias vim="nvim"
-
 alias cls="clear"
-
 # alias icat="kitten icat"
-
 alias mvd="mv ~/Downloads/*(.)"
-
 alias ani-history="cat ~/.local/state/ani-cli/ani-hsts"
-
 alias copy="wl-copy"
-
 alias paste="wl-paste"
-
 alias e="exit"
-
 alias dot="nvim ~/.dotfiles"
-
 alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d').md"
-
 alias tk="tmux run-shell 'tmux switch-client -n' \; kill-session"
-
 alias hl="rg --passthrough"
 
-# kubectl
-
-k() {
-	case $1 in
-		d)
-			shift
-			command kubectl describe $@
-			;;
-		pf)
-			shift
-			command kubectl port-forward $@
-			;;
-		e)
-			shift
-			command kubectl events $@
-			;;
-		l)
-			shift
-			command kubectl logs $@
-			;;
-		n)
-			shift
-			command kubectl config set-context --current --namespace $@
-			;;
-		h)
-			echo "d  <resource>  |  describe <resource>"
-			echo "pf <resource>  |  port-forward <resource>"
-			echo "e  <resource>  |  events <resource>"
-			echo "l  <resource>  |  logs <resource>"
-			echo "n <namespace> - to set namespace in kubeconfig"
-			;;
-		*)
-			command kubectl $@
-			;;
-	esac
+tmux-sessionizer-widget() {
+    BUFFER="tmux-sessionizer"
+    zle accept-line
 }
 
-export PODMAN_COMPOSE_WARNING_LOGS=false
+zle -N tmux-sessionizer-widget
 
-# yarn
-export PATH=$PATH:$HOME/.yarn/bin
+bindkey '^f' tmux-sessionizer-widget
 
-# python
-export PATH=$HOME/.local/bin:$PATH
-
-# go
-export PATH=$PATH:/usr/lib/golang/bin
-export PATH=$PATH:$(go env GOPATH)/bin
-
-# JAVA_HOME
-export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
-
-# Pulumi
-export PATH=$PATH:$HOME/.pulumi/bin
+k() {
+    case $1 in
+        d)
+            shift
+            command kubectl describe $@
+            ;;
+        pf)
+            shift
+            command kubectl port-forward $@
+            ;;
+        e)
+            shift
+            command kubectl events $@
+            ;;
+        l)
+            shift
+            command kubectl logs $@
+            ;;
+        n)
+            shift
+            command kubectl config set-context --current --namespace $@
+            ;;
+        h)
+            echo "d  <resource>  |  describe <resource>"
+            echo "pf <resource>  |  port-forward <resource>"
+            echo "e  <resource>  |  events <resource>"
+            echo "l  <resource>  |  logs <resource>"
+            echo "n <namespace> - to set namespace in kubeconfig"
+            ;;
+        *)
+            command kubectl $@
+            ;;
+    esac
+}

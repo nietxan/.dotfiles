@@ -1,0 +1,35 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# User configuration
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set your default editor
+export EDITOR=/usr/bin/nvim
+
+# Suppress Podman Compose warnings
+export PODMAN_COMPOSE_WARNING_LOGS=false
+
+# Add Yarn to your PATH
+export PATH=$PATH:$HOME/.yarn/bin
+
+# Add Python user bin to your PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# Add Go to your PATH
+export PATH=$PATH:/usr/lib/golang/bin
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# Set JAVA_HOME dynamically
+export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
+
+# Add Pulumi to your PATH
+export PATH=$PATH:$HOME/.pulumi/bin
