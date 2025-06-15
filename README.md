@@ -1,10 +1,6 @@
 ### usage
 
 ```bash
-git clone git@github.com:nietxan/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles
-```
-
-```bash
 git clone -b root git@github.com:nietxan/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles
 ```
 
