@@ -1,0 +1,7 @@
+[user]
+	name = nietxan
+	email = niyetkhan.saduakassov@qcloudy.io
+[init]
+	defaultBranch = main 
+[alias]
+	c = checkout
