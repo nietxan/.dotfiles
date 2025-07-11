@@ -215,7 +215,7 @@
     bindsym XF86MonBrightnessUp exec swayosd-client --brightness +3
     # Special key to take a screenshot with grim
 	bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
-	bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | tee -a "$HOME/Pictures/Screenshots/Sreenshot From $(date +"%Y-%m-%d %H-%M-%S").png" | wl-copy -t image/png
+	bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | tee -a "$HOME/Pictures/Screenshots/Screenshot From $(date +"%Y-%m-%d %H-%M-%S").png" | wl-copy -t image/png
 
 	# Gamma
 	exec gammastep &
