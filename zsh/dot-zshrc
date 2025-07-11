@@ -133,11 +133,11 @@ k() {
             command kubectl config set-context --current --namespace $@
             ;;
         h)
-            echo "d  <resource>  |  describe <resource>"
-            echo "pf <resource>  |  port-forward <resource>"
-            echo "e  <resource>  |  events <resource>"
-            echo "l  <resource>  |  logs <resource>"
-            echo "n <namespace> - to set namespace in kubeconfig"
+            echo "d  <resource>   |  describe <resource>"
+            echo "pf <resource>   |  port-forward <resource>"
+            echo "e  <resource>   |  events <resource>"
+            echo "l  <resource>   |  logs <resource>"
+            echo "n  <namespace>  |  set namespace in kubeconfig"
             ;;
         *)
             command kubectl $@
