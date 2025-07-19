@@ -1,0 +1,8 @@
+set nohlsearch
+set incsearch
+set number
+colorscheme habamax
+
+call plug#begin()
+Plug 'tpope/vim-sensible'
+call plug#end()
