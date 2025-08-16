@@ -222,7 +222,8 @@
 	# SwayOSD
 	exec swayosd-server >/dev/null 2>&1 &
 
-	exec mako
+    exec swaync
+    bindsym alt+n exec swaync-client -t -sw
 
 # Status Bar:
 
