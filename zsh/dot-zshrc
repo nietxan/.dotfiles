@@ -110,6 +110,8 @@ zle -N tmux-sessionizer-widget
 
 bindkey '^f' tmux-sessionizer-widget
 
+eval "$(direnv hook zsh)"
+
 k() {
     case $1 in
         d)
