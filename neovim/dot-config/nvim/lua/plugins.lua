@@ -11,11 +11,7 @@ return require('packer').startup(function(use)
 
 	use 'ellisonleao/gruvbox.nvim'
 
-	use 'mbbill/undotree'
-
 	use 'stevearc/oil.nvim'
-
-	use 'tpope/vim-abolish'
 
 	use 'towolf/vim-helm'
 

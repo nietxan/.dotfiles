@@ -5,7 +5,6 @@ require("oil").setup({
 		["_"] = { "actions.open_cwd", mode = "n" },
 	},
 	columns = {
-		"icon",
 		"permissions",
 		"mtime"
 	},
