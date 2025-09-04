@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-networks=$(netbird status --json | jq -r .peers.details[0].networks[])
+networks=$(netbird status --json | jq -r '.peers.details[0].networks[]')
 
 case $(uname -s) in
 	Darwin)
