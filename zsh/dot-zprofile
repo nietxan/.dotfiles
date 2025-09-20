@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zprofile.pre.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zprofile.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -33,3 +35,6 @@ export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
 
 # Add Pulumi to your PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/.local/share/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zprofile.post.zsh"
