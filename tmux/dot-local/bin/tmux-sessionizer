@@ -27,7 +27,6 @@ basename() {
         return
     fi
 
-
     local result=""
     if [[ $start -lt $total ]]; then
         result="${path_array[start]}"
@@ -49,7 +48,7 @@ if [[ -z $selected ]]; then
     exit 0
 fi
 
-selected_name=$(basename "$selected" 3)
+selected_name=$(echo "$selected" | sed "s#$HOME/Projects##")
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then

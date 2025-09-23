@@ -29,7 +29,8 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		"pylsp",
-		"ts_ls"
+		"ts_ls",
+        "rust_analyzer"
 	},
 
 	handlers = {
@@ -62,5 +63,15 @@ cmp.setup({
 	},
 })
 
+local lsp = require('lsp-zero')
 
-
+lsp.on_attach(function(client, bufnr)
+    if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({ bufnr = bufnr })
+            end,
+        })
+    end
+end)
