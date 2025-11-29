@@ -116,23 +116,23 @@ k() {
     case $1 in
         d)
             shift
-            command kubectl describe $@
+            command kubecolor describe $@
             ;;
         pf)
             shift
-            command kubectl port-forward $@
+            command kubecolor port-forward $@
             ;;
         e)
             shift
-            command kubectl events $@
+            command kubecolor events $@
             ;;
         l)
             shift
-            command kubectl logs $@
+            command kubecolor logs $@
             ;;
         n)
             shift
-            command kubectl config set-context --current --namespace $@
+            command kubecolor config set-context --current --namespace $@
             ;;
         h)
             echo "d  <resource>   |  describe <resource>"
@@ -142,7 +142,7 @@ k() {
             echo "n  <namespace>  |  set namespace in kubeconfig"
             ;;
         *)
-            command kubectl $@
+            command kubecolor $@
             ;;
     esac
 }
