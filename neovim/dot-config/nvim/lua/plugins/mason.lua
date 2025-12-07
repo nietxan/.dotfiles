@@ -6,11 +6,13 @@ return {
     "mason-org/mason-lspconfig.nvim", 
     opts = { 
       ensure_installed = { "lua_ls", "pylsp", "ts_ls" }, 
+      automatic_installation = true,
     }, 
 
     dependencies = { 
       "mason-org/mason.nvim",
       "neovim/nvim-lspconfig", 
     }, 
+
   }
 }
