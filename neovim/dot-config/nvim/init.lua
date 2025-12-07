@@ -1,3 +1,4 @@
+require("config.indent")
 require("config.autocmds")
 require("config.misc")
 require("config.clipboard")
