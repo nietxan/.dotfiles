@@ -13,4 +13,3 @@ vim.keymap.set('n', '<leader>P', '"+P', { silent = true })
 -- Visual mode mappings for pasting from system clipboard
 vim.keymap.set('v', '<leader>p', '"+p', { silent = true })
 vim.keymap.set('v', '<leader>P', '"+P', { silent = true })
-

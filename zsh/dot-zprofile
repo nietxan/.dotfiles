@@ -23,18 +23,22 @@ export PODMAN_COMPOSE_WARNING_LOGS=false
 # Add Yarn to your PATH
 export PATH=$PATH:$HOME/.yarn/bin
 
-# Add Python user bin to your PATH
+# Add Python bin to your PATH
 export PATH=$HOME/.local/bin:$PATH
 
-# Add Go to your PATH
-export PATH=$PATH:/usr/lib/golang/bin
-export PATH=$PATH:$(go env GOPATH)/bin
+# Add Cargo bin to your PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # Set JAVA_HOME dynamically
 export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-5)
 
 # Add Pulumi to your PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+export HOMEBREW_NO_ENV_HINTS=1
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/.local/share/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/.local/share/amazon-q/shell/zprofile.post.zsh"
