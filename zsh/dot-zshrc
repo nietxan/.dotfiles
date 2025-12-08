@@ -90,17 +90,17 @@ alias vim="nvim"
 alias cls="clear"
 # alias icat="kitten icat"
 alias mvd="mv ~/Downloads/*(.)"
-alias ani-history="cat ~/.local/state/ani-cli/ani-hsts"
+# alias ani-history="cat ~/.local/state/ani-cli/ani-hsts"
+# TODO: use macos native
 alias copy="wl-copy"
 alias paste="wl-paste"
 alias e="exit"
 alias dot="nvim ~/.dotfiles"
-alias note="nvim $HOME/Documents/Notes/$(date +'%Y-%m-%d').md"
+alias note="nvim $HOME/Documents/notes/$(date +'%Y-%m-%d').md"
 alias tk="tmux run-shell 'tmux switch-client -n' \; kill-session"
 alias hl="rg --passthrough"
-alias ssh-netbird="ssh -i ~/.ssh/keys/remoteam-prod-key.key -p 4034 ubuntu@44.223.177.156"
-alias ssh-gitlab="ssh -i ~/.ssh/keys/remoteam.pem ec2-user@10.0.0.20"
 
+# TODO: fix whatever it is
 tmux-sessionizer-widget() {
     BUFFER="tmux-sessionizer"
     zle accept-line
