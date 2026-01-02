@@ -77,30 +77,18 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 alias vim="nvim"
 alias cls="clear"
 # alias icat="kitten icat"
 alias mvd="mv ~/Downloads/*(.)"
 # alias ani-history="cat ~/.local/state/ani-cli/ani-hsts"
 # TODO: use macos native
-alias copy="wl-copy"
-alias paste="wl-paste"
 alias e="exit"
 alias dot="nvim ~/.dotfiles"
 alias note="nvim $HOME/Documents/notes/$(date +'%Y-%m-%d').md"
 alias tk="tmux run-shell 'tmux switch-client -n' \; kill-session"
 alias hl="rg --passthrough"
 
-# TODO: fix whatever it is
 tmux-sessionizer-widget() {
     BUFFER="tmux-sessionizer"
     zle accept-line
