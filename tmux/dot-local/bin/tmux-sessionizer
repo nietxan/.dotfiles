@@ -1,43 +1,5 @@
 #!/usr/bin/env bash
 
-basename() {
-    local path="$1"
-    local parts="$2"
-
-    path="${path%/}"
-
-    IFS='/' read -r -a path_array <<< "$path"
-    local total=${#path_array[@]}
-
-    local actual_start_offset=0
-    if [[ -z "${path_array[0]}" && "$total" -gt 1 && "${path# }" == /* ]]; then
-        actual_start_offset=1
-    fi
-
-    local num_actual_components=$((total - actual_start_offset))
-    if (( parts > num_actual_components )); then
-        parts=$num_actual_components
-    fi
-
-    local start=$((total - parts))
-    if (( start < actual_start_offset && num_actual_components > 0 )); then
-        start=$actual_start_offset
-    elif (( num_actual_components == 0 )); then
-        echo "/"
-        return
-    fi
-
-    local result=""
-    if [[ $start -lt $total ]]; then
-        result="${path_array[start]}"
-        for ((i = start + 1; i < total; i++)); do
-            result+="/${path_array[i]}"
-        done
-    fi
-
-    echo "$result/"
-}
-
 if [[ $# -eq 1 ]]; then
     selected=$1
 else

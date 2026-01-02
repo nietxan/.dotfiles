@@ -39,7 +39,9 @@ thickness = 0.1
 shell = "zsh"
 
 [window]
+option_as_alt = "OnlyLeft"
 startup_mode = "Maximized"
 dynamic_title = false
 decorations = "Buttonless"
-# decorations = "None"
+padding = { x = 10, y = 10 }
+dynamic_padding = true
