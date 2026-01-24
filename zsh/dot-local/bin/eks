@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-AWS_PROFILE=remofirst
+AWS_PROFILE=remoteam
 AWS_REGION=us-east-1
 
 usage() {

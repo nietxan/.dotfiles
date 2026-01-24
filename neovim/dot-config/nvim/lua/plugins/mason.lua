@@ -5,7 +5,7 @@ return {
   { 
     "mason-org/mason-lspconfig.nvim", 
     opts = { 
-      ensure_installed = { "lua_ls", "pylsp", "ts_ls" }, 
+      ensure_installed = { "lua_ls", "pylsp", "ts_ls", "rust_analyzer" },
       automatic_installation = true,
     }, 
 
