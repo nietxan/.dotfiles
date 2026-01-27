@@ -1,0 +1,17 @@
+foreground = "#dddddd"
+background = "#000000"
+
+font-size = 12
+
+maximize = true
+
+window-padding-x = 10
+window-padding-y = 10
+
+font-thicken = true
+
+font-thicken-strength = 25
+
+cursor-style = block
+
+cursor-style-blink = false
