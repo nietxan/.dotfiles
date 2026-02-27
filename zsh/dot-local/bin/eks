@@ -33,6 +33,12 @@ case $1 in
 		aws eks update-kubeconfig --region "$AWS_REGION" --name remoteam-prod-eks
 		kubectl config set-context --current --namespace remoteam-prod
 		;;
+	coyote)
+        export AWS_PROFILE=coyote
+        export AWS_REGION=eu-north-1
+		aws eks update-kubeconfig --region "$AWS_REGION" --name coyote-prod-eks
+		# kubectl config set-context --current --namespace remoteam-prod
+		;;
 	clear)
 		echo > $HOME/.kube/config
 		;;
