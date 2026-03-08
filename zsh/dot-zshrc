@@ -82,7 +82,6 @@ alias cls="clear"
 # alias icat="kitten icat"
 alias mvd="mv ~/Downloads/*(.)"
 # alias ani-history="cat ~/.local/state/ani-cli/ani-hsts"
-# TODO: use macos native
 alias e="exit"
 alias dot="nvim ~/.dotfiles"
 alias note="nvim $HOME/Documents/notes/$(date +'%Y-%m-%d').md"
