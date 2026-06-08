@@ -20,6 +20,10 @@ export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
 
 export PATH=/opt/homebrew/opt/openjdk@21/bin:$PATH
 
+export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
