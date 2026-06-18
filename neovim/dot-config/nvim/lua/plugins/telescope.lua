@@ -7,9 +7,9 @@ return {
     vim.keymap.set("n", "<C-f>", builtin.find_files, {})
     vim.keymap.set("n", "<C-l>", builtin.live_grep, {})
 
-    require("telescope").setup{ 
-      defaults = { 
-        file_ignore_patterns = { 
+    require("telescope").setup{
+      defaults = {
+        file_ignore_patterns = {
           "node_modules", "%.git/"
         },
       },
@@ -19,10 +19,10 @@ return {
         },
         live_grep = {
           additional_args = function()
-            return { 
-              "--hidden", 
-              "--glob", "!.git/", 
-              "--glob", "!node_modules/" 
+            return {
+              "--hidden",
+              "--glob", "!.git/",
+              "--glob", "!node_modules/"
             }
           end,
         },

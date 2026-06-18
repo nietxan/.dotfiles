@@ -15,3 +15,7 @@ font-thicken-strength = 25
 cursor-style = block
 
 cursor-style-blink = false
+
+background-image = /Users/nietxan/.local/share/terminal-bg/lock.jpg
+background-image-opacity = 0.15
+background-image-fit = cover
