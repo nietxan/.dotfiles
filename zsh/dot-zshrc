@@ -143,5 +143,4 @@ k() {
     esac
 }
 
-[ -s "/Users/nietxan/.web3j/source.sh" ] && source "/Users/nietxan/.web3j/source.sh"
 export GPG_TTY=$(tty)
