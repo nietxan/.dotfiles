@@ -10,7 +10,9 @@ export PATH=$HOME/.local/bin:$PATH
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-6)
+# export JAVA_HOME=$(realpath $(which java) | cut -d '/' -f1-6)
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 25)
 
 export PATH=$PATH:$HOME/.pulumi/bin
 
